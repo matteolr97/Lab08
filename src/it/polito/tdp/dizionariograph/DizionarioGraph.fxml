@@ -1,7 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-	
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
-	
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.dizionariograph.DizionarioGraphController">
-	<!-- TODO Add Nodes -->
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="290.0" prefWidth="413.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.dizionariograph.DizionarioGraphController">
+   <top>
+      <Label text="Esercitazione 8" textFill="#f20000" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Label>
+   </top>
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Inserire il numero di lettere:" />
+                  <TextField fx:id="txtLettere" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Inserire una parola da cercare:" />
+                  <TextField fx:id="txtParola" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="btnGrafo" mnemonicParsing="false" onAction="#doGrafo" text="Genera Grafo" />
+                  <Button fx:id="btnRicercaVicini" mnemonicParsing="false" onAction="#doFindVicini" text="Trova Vicini">
+                     <HBox.margin>
+                        <Insets left="50.0" right="50.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnGrado" mnemonicParsing="false" onAction="#doFindGrado" text="Trova Grado Max" />
+               </children>
+            </HBox>
+            <TextArea fx:id="txtResult" prefHeight="200.0" prefWidth="200.0" />
+            <Button fx:id="btnReset" mnemonicParsing="false" onAction="#doClear" text="Reset">
+               <VBox.margin>
+                  <Insets left="300.0" />
+               </VBox.margin></Button>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </center>
 </BorderPane>
